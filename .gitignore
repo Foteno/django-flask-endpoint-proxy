@@ -18,3 +18,5 @@ pytracking/pretrain/
 results/*
 
 .env
+
+media/*

@@ -74,7 +74,8 @@ def choose_mask(request):
         choose_mask_url = choose_mask_url_lama
     elif (alg == InpaintingAlgorithm.GAN):
         choose_mask_url = choose_mask_url_gan
-    elif (alg == InpaintingAlgorithm.TELEA):
+    elif (alg == InpaintingAlgorithm.TELEA or alg == InpaintingAlgorithm.NS):
+        params['algorithm'] = alg.value
         choose_mask_url = choose_mask_url_opencv
 
     response_image = requests.get(choose_mask_url, params=params)
